@@ -12,7 +12,6 @@ module OmniAuth
       option :uid_field, :uid
 
       info do
-        binding.pry
         {
           'email' => raw_info['email'],
           'name' => raw_info['name'],
