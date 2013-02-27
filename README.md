@@ -1,7 +1,7 @@
 omniauth-gplus
 =========
 
-  - [![Gem Version]](https://badge.fury.io/rb/omniauth-gplus.png)](https://rubygems.org/gems/omniauth-gplus)
+  - [![Gem Version](https://badge.fury.io/rb/omniauth-gplus.png)](https://rubygems.org/gems/omniauth-gplus)
   - [![Code Climate](https://codeclimate.com/github/krainboltgreene/omniauth-gplus.png)](https://codeclimate.com/github/krainboltgreene/omniauth-gplus)
   - [![Build Status](https://travis-ci.org/krainboltgreene/omniauth-gplus.png)](https://travis-ci.org/krainboltgreene/omniauth-gplus)
   - [![Dependency Status](https://gemnasium.com/krainboltgreene/omniauth-gplus.png)](https://gemnasium.com/krainboltgreene/omniauth-gplus)
