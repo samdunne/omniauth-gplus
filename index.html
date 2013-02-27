@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>omniauth-gplus by krainboltgreene</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/krainboltgreene/omniauth-gplus">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>omniauth-gplus</h1>
+            <h2>A Google+ strategy for OmniAuth</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/krainboltgreene/omniauth-gplus/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/krainboltgreene/omniauth-gplus/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <ul>
+<li><a href="https://rubygems.org/gems/omniauth-gplus"><img src="https://badge.fury.io/rb/omniauth-gplus.png" alt="Gem Version"></a></li>
+<li><a href="https://codeclimate.com/github/krainboltgreene/omniauth-gplus"><img src="https://codeclimate.com/github/krainboltgreene/omniauth-gplus.png" alt="Code Climate"></a></li>
+<li><a href="https://travis-ci.org/krainboltgreene/omniauth-gplus"><img src="https://travis-ci.org/krainboltgreene/omniauth-gplus.png" alt="Build Status"></a></li>
+<li><a href="https://gemnasium.com/krainboltgreene/omniauth-gplus"><img src="https://gemnasium.com/krainboltgreene/omniauth-gplus.png" alt="Dependency Status"></a></li>
+<li><a href="https://coveralls.io/r/krainboltgreene/omniauth-gplus"><img src="https://coveralls.io/repos/krainboltgreene/omniauth-gplus/badge.png?branch=master" alt="Coverage Status"></a></li>
+</ul><p><code>omniauth-gplus</code> is a Google+ strategy for OmniAuth.
+It allows you to easily interact with the Google+ OAuth2 endpoint.</p>
+
+<h2>Examples</h2>
+
+<p>To use <code>omniauth-gplus</code> in Rails you only need to put this in a initializer:</p>
+
+<div class="highlight"><pre><span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">middleware</span><span class="o">.</span><span class="n">use</span> <span class="no">OmniAuth</span><span class="o">::</span><span class="no">Builder</span> <span class="k">do</span>
+  <span class="n">provider</span> <span class="ss">:gplus</span><span class="p">,</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">'GPLUS_KEY'</span><span class="o">]</span><span class="p">,</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">'GPLUS_SECRET'</span><span class="o">]</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>By default the gem uses the <code>email</code> scope, but you can get more information with:</p>
+
+<div class="highlight"><pre><span class="n">provider</span> <span class="ss">:gplus</span><span class="p">,</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">'GPLUS_KEY'</span><span class="o">]</span><span class="p">,</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">'GPLUS_SECRET'</span><span class="o">]</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="s1">'email, profile'</span>
+</pre></div>
+
+<p>The information schema looks like this:</p>
+
+<div class="highlight"><pre><span class="n">info</span> <span class="k">do</span>
+  <span class="p">{</span>
+    <span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="s1">'kurtisrainboltgreene@gmail.com'</span><span class="p">,</span>
+    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Kurtis Rainbolt-Greene'</span><span class="p">,</span>
+    <span class="s1">'first_name'</span> <span class="o">=&gt;</span> <span class="s1">'Kurtis'</span><span class="p">,</span>
+    <span class="s1">'last_name'</span> <span class="o">=&gt;</span> <span class="s1">'Rainbolt-Greene'</span><span class="p">,</span>
+    <span class="s1">'image'</span> <span class="o">=&gt;</span> <span class="s1">'http://somelongurl.png'</span><span class="p">,</span>
+    <span class="s1">'urls'</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="s2">"Google+"</span> <span class="o">=&gt;</span> <span class="s1">'http://urltouserprofile.com'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="n">extra</span> <span class="k">do</span>
+  <span class="p">{</span>
+    <span class="s1">'locale'</span> <span class="o">=&gt;</span> <span class="s1">'en'</span><span class="p">,</span>
+    <span class="s1">'gender'</span> <span class="o">=&gt;</span> <span class="s1">'male'</span><span class="p">,</span>
+    <span class="s1">'birthday'</span> <span class="o">=&gt;</span> <span class="s1">'2013-12-24'</span><span class="p">,</span>
+    <span class="s1">'raw_info'</span> <span class="o">=&gt;</span> <span class="c1"># huge hash</span>
+  <span class="p">}</span>
+<span class="k">end</span>
+</pre></div>
+
+<h2>Installing</h2>
+
+<p><strong>Requirements</strong>:</p>
+
+<ol>
+<li>Ruby 1.9 OR Rubinius 1.9 OR JRuby 1.9</li>
+<li>A GPlus API key/secret</li>
+</ol><p>You can either install manually:</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>gem install omniauth-gplus
+</pre></div>
+
+<p>Or put it in your <code>Gemfile</code>:</p>
+
+<div class="highlight"><pre><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>
+
+<span class="n">gem</span> <span class="s1">'omniauth-gplus'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0'</span>
+</pre></div>
+
+<h2>Issues &amp; Documentation</h2>
+
+<ul>
+<li><a href="https://github.com/krainboltgreene/omniauth-gplus/wiki">Documentation</a></li>
+<li><a href="https://github.com/krainboltgreene/omniauth-gplus/issues">Issues</a></li>
+</ul><p>Absolutely feel free to contribute, please!</p>
+
+<h2>Changelog</h2>
+
+<p><strong>v1.0.0</strong></p>
+
+<ul>
+<li>Initial release</li>
+</ul><h2>Contributing</h2>
+
+<ul>
+<li>
+<strong>Fork</strong> the repository</li>
+<li>
+<strong>Clone the repository</strong> locally, or <strong>edit via Github</strong>
+</li>
+<li>Create a <strong>new branch</strong> using the <a href="http://yakiloo.com/getting-started-git-flow/">Git Flow Standard</a> conventions</li>
+<li>Commit <strong>often</strong> and <strong>when important</strong>
+</li>
+<li>
+<strong>DO NOT CHANGE</strong> ANY OF THESE (without making a new branch for <em>that</em> change):
+
+<ul>
+<li><code>*.gemspec</code></li>
+<li><code>Rakefile</code></li>
+<li><code>.rvmrc</code></li>
+<li><code>.gitignore</code></li>
+<li>Any part of the git history</li>
+</ul>
+</li>
+<li>
+<strong>Write tests</strong> specifically for the changes you've made, if no test exist</li>
+<li>
+<strong>Push</strong> your feature or hotfix branch to Github.</li>
+<li>Make a <strong>Pull Request</strong>
+</li>
+</ul><h2>Credits</h2>
+
+<h2>License</h2>
+
+<p>Copyright (c) 2013 Kurtis Rainbolt-Greene</p>
+
+<p>MIT License</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/krainboltgreene">krainboltgreene</a> can be found on <a href="https://github.com/krainboltgreene/omniauth-gplus">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
