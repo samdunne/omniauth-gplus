@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 require 'omniauth-gplus'
 require 'minitest/autorun'
 require 'minitest/pride'
