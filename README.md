@@ -1,8 +1,11 @@
 omniauth-gplus
 =========
 
+  - [![Gem Version]](https://badge.fury.io/rb/)](https://rubygems.org/gems/omniauth-gplus)
   - [![Code Climate](https://codeclimate.com/github/krainboltgreene/omniauth-gplus.png)](https://codeclimate.com/github/krainboltgreene/omniauth-gplus)
   - [![Build Status](https://travis-ci.org/krainboltgreene/omniauth-gplus.png)](https://travis-ci.org/krainboltgreene/omniauth-gplus)
+  - [![Dependency Status](https://gemnasium.com/krainboltgreene/omniauth-gplus.png)](https://gemnasium.com/krainboltgreene/omniauth-gplus)
+  - [![Coverage Status](https://coveralls.io/repos/krainboltgreene/omniauth-gplus/badge.png?branch=master)](https://coveralls.io/r/krainboltgreene/omniauth-gplus)
 
 `omniauth-gplus` is a Google+ strategy for OmniAuth.
 It allows you to easily interact with the Google+ OAuth2 endpoint.
