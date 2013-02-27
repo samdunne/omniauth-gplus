@@ -37,7 +37,7 @@ class TestOmniAuthGPlus < MiniTest::Unit::TestCase
   end
 
   def test_that_it_has_a_version_number
-    refute_nil OmniAuth::Strategies::GPlus::VERSION
+    refute_nil OmniAuth::GPlus::VERSION
   end
 
   def new_oauth

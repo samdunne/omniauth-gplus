@@ -1,11 +1,11 @@
 # encoding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require_relative 'omniauth-gplus'
+require 'omniauth/gplus/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "omniauth-gplus"
-  spec.version       = OmniAuth::Strategies::GPlus::VERSION
+  spec.version       = OmniAuth::GPlus::VERSION
   spec.authors       = ["Kurtis Rainbolt-Greene"]
   spec.email         = ["me@kurtisrainboltgreene.name"]
   spec.summary       = %q{A Google+ OAuth2 solution for Omniauth}

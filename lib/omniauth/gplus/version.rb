@@ -1,7 +1,5 @@
 module OmniAuth
-  module Strategies
-    class GPlus < OAuth2
+  module GPlus
       VERSION = "1.0.0"
-    end
   end
 end
