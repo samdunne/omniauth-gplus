@@ -1,16 +1,55 @@
 omniauth-gplus
 =========
 
-**Current Version**: 1.0.0
+  - [![Code Climate](https://codeclimate.com/github/krainboltgreene/omniauth-gplus.png)](https://codeclimate.com/github/krainboltgreene/omniauth-gplus)
+  - [![Build Status](https://travis-ci.org/krainboltgreene/omniauth-gplus.png)](https://travis-ci.org/krainboltgreene/omniauth-gplus)
 
-`omniauth-gplus` is a
+`omniauth-gplus` is a Google+ strategy for OmniAuth.
+It allows you to easily interact with the Google+ OAuth2 endpoint.
 
 
 Examples
 --------
 
-To use `omniauth-gplus`
+To use `omniauth-gplus` in Rails you only need to put this in a initializer:
 
+``` ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :gplus, ENV['GPLUS_KEY'], ENV['GPLUS_SECRET']
+end
+```
+
+By default the gem uses the `email` scope, but you can get more information with:
+
+``` ruby
+provider :gplus, ENV['GPLUS_KEY'], ENV['GPLUS_SECRET'], scope: 'email, profile'
+```
+
+The information schema looks like this:
+
+``` ruby
+info do
+  {
+    'email' => 'kurtisrainboltgreene@gmail.com',
+    'name' => 'Kurtis Rainbolt-Greene',
+    'first_name' => 'Kurtis',
+    'last_name' => 'Rainbolt-Greene',
+    'image' => 'http://somelongurl.png',
+    'urls' => {
+      "Google+" => 'http://urltouserprofile.com'
+    }
+  }
+end
+
+extra do
+  {
+    'locale' => 'en',
+    'gender' => 'male',
+    'birthday' => '2013-12-24',
+    'raw_info' => # huge hash
+  }
+end
+```
 
 
 Installing
@@ -19,8 +58,7 @@ Installing
 **Requirements**:
 
   1. Ruby 1.9 OR Rubinius 1.9 OR JRuby 1.9
-  2. Omniauth ~> 1.1
-  3. A GPlus API key/secret
+  2. A GPlus API key/secret
 
 You can either install manually:
 
