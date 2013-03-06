@@ -10,6 +10,10 @@ module OmniAuth
       option :scope, 'email'
 
       option :uid_field, :uid
+      
+      uid do
+        raw_info['id']
+      end
 
       info do
         {
