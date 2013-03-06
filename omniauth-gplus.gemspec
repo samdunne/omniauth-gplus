@@ -6,8 +6,8 @@ require 'omniauth/gplus/version'
 Gem::Specification.new do |spec|
   spec.name          = "omniauth-gplus"
   spec.version       = OmniAuth::GPlus::VERSION
-  spec.authors       = ["Kurtis Rainbolt-Greene"]
-  spec.email         = ["me@kurtisrainboltgreene.name"]
+  spec.authors       = ["Kurtis Rainbolt-Greene", "Sam Dunne"]
+  spec.email         = ["me@kurtisrainboltgreene.name", "sam@sam-dunne.com"]
   spec.summary       = %q{A Google+ OAuth2 solution for Omniauth}
   spec.description   = spec.summary
   spec.homepage      = "http://krainboltgreene.github.com/omniauth-gplus"
