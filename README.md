@@ -116,6 +116,8 @@ Contributing
 Credits
 -------
 
+  - [Sam Dunne](https://github.com/samdunne), for initial work and bug fixes
+  
 
 License
 -------
