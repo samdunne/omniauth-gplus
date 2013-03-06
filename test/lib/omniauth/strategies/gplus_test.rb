@@ -49,4 +49,8 @@ class TestOmniAuthGPlus < MiniTest::Unit::TestCase
     actual = new_oauth.options.uid_field
     assert_equal(expected, actual)
   end
+  
+  def test_uid_not_nil
+    assert_not_nil(:uid)
+  end
 end
