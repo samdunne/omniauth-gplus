@@ -89,6 +89,9 @@ Absolutely feel free to contribute, please!
 
 Changelog
 ---------
+**v1.1.0**
+
+* Fixed UID field always being nil
 
 **v1.0.0**
 
