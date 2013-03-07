@@ -51,6 +51,6 @@ class TestOmniAuthGPlus < MiniTest::Unit::TestCase
   end
   
   def test_uid_not_nil
-    assert_not_nil(:uid)
+    refute_nil(new_oauth.options.uid_field)
   end
 end
