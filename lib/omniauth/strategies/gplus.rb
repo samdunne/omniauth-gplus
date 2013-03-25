@@ -7,7 +7,7 @@ module OmniAuth
         token_url: 'https://www.google.com/accounts/o8/oauth2/token'
       }
 
-      option :scope, 'email'
+      option :scope, 'userinfo.email'
 
       option :uid_field, :uid
       
@@ -51,7 +51,7 @@ module OmniAuth
       end
 
       def format_scope(scope)
-        "https://www.googleapis.com/auth/userinfo.#{scope}"
+        "https://www.googleapis.com/auth/#{scope}"
       end
 
       def custom_parameters(params)
