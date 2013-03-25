@@ -31,7 +31,7 @@ class TestOmniAuthGPlus < MiniTest::Unit::TestCase
   end
 
   def test_default_scope_is_email
-    expected = 'email'
+    expected = 'userinfo.email'
     actual = strategy.options['scope']
     assert_equal(expected, actual)
   end

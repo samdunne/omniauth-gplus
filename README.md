@@ -89,13 +89,18 @@ Absolutely feel free to contribute, please!
 
 Changelog
 ---------
+
+**v1.1.1**
+
+  * Using the correct api scope
+
 **v1.1.0**
 
-* Fixed UID field always being nil
+  * Fixed UID field always being nil
 
 **v1.0.0**
 
-* Initial release
+  * Initial release
 
 
 Contributing
