@@ -22,11 +22,25 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
-By default the gem uses the `email` scope, but you can get more information with:
+By default the gem uses the `userinfo.email` scope, but you can get more information by using this interface:
 
 ``` ruby
-provider :gplus, ENV['GPLUS_KEY'], ENV['GPLUS_SECRET'], scope: 'email, profile'
+provider :gplus, ENV['GPLUS_KEY'], ENV['GPLUS_SECRET'], scope: 'userinfo.email, userinfo.profile'
 ```
+
+Here are the different scopes:
+
+  - https://www.googleapis.com/auth/userinfo.email
+  - https://www.googleapis.com/auth/userinfo.profile
+
+To identify the user as "me" in all requests use this scope:
+
+  - https://www.googleapis.com/auth/plus.me
+
+To get all of these AND log the user in:
+
+  - https://www.googleapis.com/auth/plus.login
+
 
 The information schema looks like this:
 
