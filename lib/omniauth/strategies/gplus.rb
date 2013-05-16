@@ -10,7 +10,7 @@ module OmniAuth
       option :scope, 'userinfo.email'
 
       option :uid_field, :uid
-      
+
       uid do
         raw_info['id']
       end
@@ -55,11 +55,16 @@ module OmniAuth
       end
 
       def custom_parameters(params)
-        ["scope", "client_options"].each { |k| add_key_to_params(params, k) }
+        ["scope", "client_options", "state"].each { |k| add_key_to_params(params, k) }
       end
 
       def add_key_to_params(params, key)
-        params[key] = request.params[key] if request.params[key]
+        if request.params[key]
+          params[key] = request.params[key]
+
+          # to support omniauth-oauth2's auto csrf protection
+          session['omniauth.state'] = params[:state] if key == 'state'
+        end
       end
 
       def raw_info
