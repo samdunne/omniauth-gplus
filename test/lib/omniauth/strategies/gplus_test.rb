@@ -36,6 +36,21 @@ class TestOmniAuthGPlus < MiniTest::Unit::TestCase
     assert_equal(expected, actual)
   end
 
+  def test_state_state_is_included_in_request_params_when_present
+    expected = 'some_state'
+    @request.stubs(:params).returns({ 'state' => expected })
+    assert_equal expected, strategy.authorize_params[:state]
+  end
+
+  def test_stores_state_in_the_session_when_present
+    expected = 'some_state'
+    @request.stubs(:params).returns({ 'state' => expected })
+    refute_empty strategy.authorize_params['state']
+    assert_equal expected, strategy.authorize_params[:state]
+    refute_empty strategy.session['omniauth.state']
+    assert_equal expected, strategy.session['omniauth.state']
+  end
+
   def test_that_it_has_a_version_number
     refute_nil OmniAuth::GPlus::VERSION
   end
@@ -49,7 +64,7 @@ class TestOmniAuthGPlus < MiniTest::Unit::TestCase
     actual = new_oauth.options.uid_field
     assert_equal(expected, actual)
   end
-  
+
   def test_uid_not_nil
     refute_nil(new_oauth.options.uid_field)
   end
