@@ -127,7 +127,8 @@ Contributing
 * **DO NOT CHANGE** ANY OF THESE (without making a new branch for *that* change):
   * `*.gemspec`
   * `Rakefile`
-  * `.rvmrc`
+  * `.ruby-version`
+  * `.ruby-gemset`
   * `.gitignore`
   * Any part of the git history
 * **Write tests** specifically for the changes you've made, if no test exist
@@ -139,7 +140,7 @@ Credits
 -------
 
   - [Sam Dunne](https://github.com/samdunne), for initial work and bug fixes
-  
+
 
 License
 -------
