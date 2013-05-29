@@ -23,7 +23,7 @@ module OmniAuth
           'last_name' => raw_info['family_name'],
           'image' => raw_info['picture'],
           'urls' => {
-            "Google+" => raw_info['link']
+            'Google+' => raw_info['link']
           }
         }
       end
@@ -47,7 +47,7 @@ module OmniAuth
       private
 
       def format_scopes(scopes)
-        scopes.split(/,\s*/).map(&method(:format_scope)).join(" ")
+        scopes.split(/,\s*/).map(&method(:format_scope)).join(' ')
       end
 
       def format_scope(scope)
@@ -55,7 +55,7 @@ module OmniAuth
       end
 
       def custom_parameters(params)
-        ["scope", "client_options", "state"].each { |k| add_key_to_params(params, k) }
+        %w(scope client_options state).each { |k| add_key_to_params(params, k) }
       end
 
       def add_key_to_params(params, key)

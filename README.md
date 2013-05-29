@@ -134,6 +134,7 @@ Contributing
 * **Write tests** specifically for the changes you've made, if no test exist
 * **Push** your feature or hotfix branch to Github.
 * Make a **Pull Request**
+* Run code against **rubocop**. Make sure if conforms to standards
 
 
 Credits
