@@ -55,7 +55,7 @@ module OmniAuth
       end
 
       def custom_parameters(params)
-        ['scope', 'client_options', 'state'].each { |k| add_key_to_params(params, k) }
+        %w(scope client_options state).each { |k| add_key_to_params(params, k) }
       end
 
       def add_key_to_params(params, key)
