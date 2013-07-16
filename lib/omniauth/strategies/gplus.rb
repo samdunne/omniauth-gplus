@@ -7,7 +7,11 @@ module OmniAuth
         token_url: 'https://www.google.com/accounts/o8/oauth2/token'
       }
 
+      option :authorize_options, [:scope, :request_visible_actions]
+
       option :scope, 'userinfo.email'
+
+      option :request_visible_actions, nil
 
       option :uid_field, :uid
 
@@ -40,11 +44,22 @@ module OmniAuth
       def authorize_params
         super.tap do |params|
           params['scope'] = format_scopes(params['scope'])
+          if (params['request_visible_actions'])
+            params['request_visible_actions'] = format_actions(params['request_visible_actions'])
+          end 
           custom_parameters(params)
         end
       end
 
       private
+
+      def format_actions(actions)
+        actions.split(/,\s*/).map(&method(:format_action)).join(" ")
+      end
+
+      def format_action(action)
+        "http://schemas.google.com/#{action}"
+      end
 
       def format_scopes(scopes)
         scopes.split(/,\s*/).map(&method(:format_scope)).join(" ")
@@ -55,7 +70,7 @@ module OmniAuth
       end
 
       def custom_parameters(params)
-        ["scope", "client_options", "state"].each { |k| add_key_to_params(params, k) }
+        ["scope", "client_options", "state", "request_visible_actions"].each { |k| add_key_to_params(params, k) }
       end
 
       def add_key_to_params(params, key)
