@@ -41,6 +41,14 @@ To get all of these AND log the user in:
 
   - https://www.googleapis.com/auth/plus.login
 
+If you use the `plus.login` scope you can request `visibleactions` in order to allow your app to post App Activities on behalf of your users.  To request `visibleactions`, use the following inrerface:
+
+```ruby
+provider :gplus, ENV['GPLUS_KEY'], ENV['GPLUS_SECRET'], scope: 'plus.login', request_visible_actions: 'AddActivity,BuyActivity'
+```
+
+To see and learn about all of the available App Activity types, visit: https://developers.google.com/+/api/moment-types/
+
 
 The information schema looks like this:
 

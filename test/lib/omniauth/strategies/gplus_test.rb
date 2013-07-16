@@ -36,6 +36,12 @@ class TestOmniAuthGPlus < MiniTest::Unit::TestCase
     assert_equal(expected, actual)
   end
 
+  def test_default_request_visible_actions_is_nil
+    expected = nil
+    actual = strategy.options['request_visible_actions']
+    assert_equal(expected, actual)
+  end
+
   def test_state_state_is_included_in_request_params_when_present
     expected = 'some_state'
     @request.stubs(:params).returns({ 'state' => expected })
