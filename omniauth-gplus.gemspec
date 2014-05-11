@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["me@kurtisrainboltgreene.name", "sam@sam-dunne.com"]
   spec.summary       = %q{A Google+ OAuth2 solution for Omniauth}
   spec.description   = spec.summary
-  spec.homepage      = "http://krainboltgreene.github.com/omniauth-gplus"
+  spec.homepage      = "http://samdunne.github.com/omniauth-gplus"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

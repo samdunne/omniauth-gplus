@@ -2,10 +2,10 @@ omniauth-gplus
 =========
 
   - [![Gem Version](https://badge.fury.io/rb/omniauth-gplus.png)](https://rubygems.org/gems/omniauth-gplus)
-  - [![Code Climate](https://codeclimate.com/github/krainboltgreene/omniauth-gplus.png)](https://codeclimate.com/github/krainboltgreene/omniauth-gplus)
-  - [![Build Status](https://travis-ci.org/krainboltgreene/omniauth-gplus.png)](https://travis-ci.org/krainboltgreene/omniauth-gplus)
-  - [![Dependency Status](https://gemnasium.com/krainboltgreene/omniauth-gplus.png)](https://gemnasium.com/krainboltgreene/omniauth-gplus)
-  - [![Coverage Status](https://coveralls.io/repos/krainboltgreene/omniauth-gplus/badge.png?branch=master)](https://coveralls.io/r/krainboltgreene/omniauth-gplus)
+  - [![Code Climate](https://codeclimate.com/github/samdunne/omniauth-gplus.png)](https://codeclimate.com/github/samdunne/omniauth-gplus)
+  - [![Build Status](https://travis-ci.org/samdunne/omniauth-gplus.png)](https://travis-ci.org/samdunne/omniauth-gplus)
+  - [![Dependency Status](https://gemnasium.com/samdunne/omniauth-gplus.png)](https://gemnasium.com/samdunne/omniauth-gplus)
+  - [![Coverage Status](https://coveralls.io/repos/samdunne/omniauth-gplus/badge.png?branch=master)](https://coveralls.io/r/samdunne/omniauth-gplus)
 
 `omniauth-gplus` is a Google+ strategy for OmniAuth.
 It allows you to easily interact with the Google+ OAuth2 endpoint.
@@ -55,10 +55,10 @@ The information schema looks like this:
 ``` ruby
 info do
   {
-    'email' => 'kurtisrainboltgreene@gmail.com',
-    'name' => 'Kurtis Rainbolt-Greene',
-    'first_name' => 'Kurtis',
-    'last_name' => 'Rainbolt-Greene',
+    'email' => 'sam@sam-dunne.com',
+    'name' => 'Sam Dunne',
+    'first_name' => 'Sam',
+    'last_name' => 'Dunne',
     'image' => 'http://somelongurl.png',
     'urls' => {
       "Google+" => 'http://urltouserprofile.com'
@@ -82,7 +82,7 @@ Installing
 
 **Requirements**:
 
-  1. Ruby 1.9 OR Rubinius 1.9 OR JRuby 1.9
+  1. Ruby 2.1, 2.0, 1.9 OR Rubinius 1.9 OR JRuby 1.9
   2. A GPlus API key/secret
 
 You can either install manually:
@@ -96,21 +96,29 @@ Or put it in your `Gemfile`:
 ``` ruby
 source 'https://rubygems.org'
 
-gem 'omniauth-gplus', '~> 1.0'
+gem 'omniauth-gplus', '~> 2.0'
 ```
 
 
 Issues & Documentation
 ----------------------
 
-* [Documentation](https://github.com/krainboltgreene/omniauth-gplus/wiki)
-* [Issues](https://github.com/krainboltgreene/omniauth-gplus/issues)
+* [Documentation](https://github.com/samdunne/omniauth-gplus/wiki)
+* [Issues](https://github.com/samdunne/omniauth-gplus/issues)
 
 Absolutely feel free to contribute, please!
 
 
 Changelog
 ---------
+**v2.0.0**
+
+  * Support for hybrid sign-in flow
+  * Conform to [ruby style guidelines](bbatsov/ruby-style-guide)
+  * Support for Ruby 2.1 & 2.0
+  * Ensure compatibility with Rails 4.1 and 4.0
+  * Squashed bugs
+  * Moved changelog to seperate file
 
 **v1.1.1**
 
@@ -144,16 +152,10 @@ Contributing
 * Make a **Pull Request**
 
 
-Credits
--------
-
-  - [Sam Dunne](https://github.com/samdunne), for initial work and bug fixes
-
-
 License
 -------
 
-Copyright (c) 2013 Kurtis Rainbolt-Greene
+Copyright (c) 2014 Sam Dunne
 
 MIT License
 
