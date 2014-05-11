@@ -1,11 +1,17 @@
 omniauth-gplus
 =========
 
-  - [![Gem Version](https://badge.fury.io/rb/omniauth-gplus.png)](https://rubygems.org/gems/omniauth-gplus)
-  - [![Code Climate](https://codeclimate.com/github/samdunne/omniauth-gplus.png)](https://codeclimate.com/github/samdunne/omniauth-gplus)
-  - [![Build Status](https://travis-ci.org/samdunne/omniauth-gplus.png)](https://travis-ci.org/samdunne/omniauth-gplus)
-  - [![Dependency Status](https://gemnasium.com/samdunne/omniauth-gplus.png)](https://gemnasium.com/samdunne/omniauth-gplus)
-  - [![Coverage Status](https://coveralls.io/repos/samdunne/omniauth-gplus/badge.png?branch=master)](https://coveralls.io/r/samdunne/omniauth-gplus)
+[![Gem Version](https://badge.fury.io/rb/omniauth-gplus.png)][gem](https://rubygems.org/gems/omniauth-gplus)
+[![Code Climate](https://codeclimate.com/github/samdunne/omniauth-gplus.png)][codeclimate](https://codeclimate.com/github/samdunne/omniauth-gplus)
+[![Build Status](https://travis-ci.org/samdunne/omniauth-gplus.png)][travis](https://travis-ci.org/samdunne/omniauth-gplus)
+[![Dependency Status](https://gemnasium.com/samdunne/omniauth-gplus.png)][gemnasium](https://gemnasium.com/samdunne/omniauth-gplus)
+[![Coverage Status](https://coveralls.io/repos/samdunne/omniauth-gplus/badge.png?branch=master)][coveralls](https://coveralls.io/r/samdunne/omniauth-gplus)
+
+[gem]: https://rubygems.org/gems/omniauth-gplus
+[codeclimate]: https://codeclimate.com/github/samdunne/omniauth-gplus
+[travis]: https://travis-ci.org/samdunne/omniauth-gplus
+[gemnasium]: https://gemnasium.com/samdunne/omniauth-gplus
+[coveralls]: https://coveralls.io/r/samdunne/omniauth-gplus
 
 `omniauth-gplus` is a Google+ strategy for OmniAuth.
 It allows you to easily interact with the Google+ OAuth2 endpoint.
