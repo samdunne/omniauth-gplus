@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'coveralls'
 
-  if RUBY_PLATFORM == 'rbx' do
+  if RUBY_PLATFORM == 'rbx'
     spec.add_development_dependency 'racc'
     spec.add_development_dependency 'rubinius-coverage', github: 'rubinius/rubinius-coverage'
     spec.add_development_dependency 'rubysl'
