@@ -46,7 +46,7 @@ module OmniAuth
           params['scope'] = format_scopes(params['scope'])
           if (params['request_visible_actions'])
             params['request_visible_actions'] = format_actions(params['request_visible_actions'])
-          end 
+          end
           custom_parameters(params)
         end
       end
@@ -70,15 +70,12 @@ module OmniAuth
       end
 
       def custom_parameters(params)
-        ["scope", "client_options", "state", "request_visible_actions"].each { |k| add_key_to_params(params, k) }
+        ["scope", "client_options", "request_visible_actions"].each { |k| add_key_to_params(params, k) }
       end
 
       def add_key_to_params(params, key)
         if request.params[key]
           params[key] = request.params[key]
-
-          # to support omniauth-oauth2's auto csrf protection
-          session['omniauth.state'] = params[:state] if key == 'state'
         end
       end
 
