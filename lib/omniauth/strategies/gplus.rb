@@ -1,6 +1,11 @@
+require 'omniauth/strategies/oauth2'
+
 module OmniAuth
   module Strategies
-    class GPlus < OAuth2
+    class GPlus < OmniAuth::Strategies::OAuth2
+      class NoAuthorizationCodeError < StandardError; end
+      class UnknownSignatureAlgorithmError < NotImplementedError; end
+
       option :client_options, {
         site: 'https://www.googleapis.com/oauth2/v1',
         authorize_url: 'https://www.google.com/accounts/o8/oauth2/authorization',
@@ -70,7 +75,7 @@ module OmniAuth
       end
 
       def custom_parameters(params)
-        ["scope", "client_options", "request_visible_actions"].each { |k| add_key_to_params(params, k) }
+        ["scope", "client_options", "request_visible_actions", "access_type"].each { |k| add_key_to_params(params, k) }
       end
 
       def add_key_to_params(params, key)

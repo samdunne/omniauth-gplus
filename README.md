@@ -17,6 +17,27 @@ omniauth-gplus
 It allows you to easily interact with the Google+ OAuth2 endpoint.
 
 
+Installing
+----------
+
+**Requirements**:
+  A GPlus API key/secret
+
+You can either install manually:
+
+``` bash
+$ gem install omniauth-gplus
+```
+
+Or put it in your `Gemfile`:
+
+``` ruby
+source 'https://rubygems.org'
+
+gem 'omniauth-gplus', '~> 2.0'
+```
+
+
 Examples
 --------
 
@@ -55,6 +76,11 @@ provider :gplus, ENV['GPLUS_KEY'], ENV['GPLUS_SECRET'], scope: 'plus.login', req
 
 To see and learn about all of the available App Activity types, visit: https://developers.google.com/+/api/moment-types/
 
+To get a refresh token please pass the following:
+
+```ruby
+provider :gplus, ENV['GPLUS_KEY'], ENV['GPLUS_SECRET'], scope: 'plus.login', request_visible_actions: 'AddActivity,BuyActivity', access_type: 'offline'
+```
 
 The information schema looks like this:
 
@@ -82,56 +108,15 @@ extra do
 end
 ```
 
-
-Installing
-----------
-
-**Requirements**:
-
-  1. Ruby 2.1, 2.0, 1.9 OR Rubinius 1.9 OR JRuby 1.9
-  2. A GPlus API key/secret
-
-You can either install manually:
-
-``` bash
-$ gem install omniauth-gplus
-```
-
-Or put it in your `Gemfile`:
-
-``` ruby
-source 'https://rubygems.org'
-
-gem 'omniauth-gplus', '~> 2.0'
-```
-
-
-Issues & Documentation
-----------------------
-
-* [Documentation](https://github.com/samdunne/omniauth-gplus/wiki)
-* [Issues](https://github.com/samdunne/omniauth-gplus/issues)
-
-Absolutely feel free to contribute, please!
-
-
-Contributing
-------------
-
-* **Fork** the repository
-* **Clone the repository** locally, or **edit via Github**
-* Create a **new branch** using the [Git Flow Standard](http://yakiloo.com/getting-started-git-flow/) conventions
-* Commit **often** and **when important**
-* **DO NOT CHANGE** ANY OF THESE (without making a new branch for *that* change):
-  * `*.gemspec`
-  * `Rakefile`
-  * `.ruby-version`
-  * `.ruby-gemset`
-  * `.gitignore`
-  * Any part of the git history
-* **Write tests** specifically for the changes you've made, if no test exist
-* **Push** your feature or hotfix branch to Github.
-* Make a **Pull Request**
+Supported Rubies
+----------------
+Actively tested with the following Ruby versions:
+- MRI 2.1.0
+- MRI 2.0.0
+- MRI 1.9.3
+- MRI 1.9.2
+- JRuby 1.7.9
+- Rubinius (latest stable)
 
 
 License

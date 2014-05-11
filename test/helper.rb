@@ -8,7 +8,7 @@ require 'minitest/pride'
 OmniAuth.config.test_mode = true
 
 def application
-  ->(env) { [200, {}, ["Hello World."]]}
+  ->(_env) { [200, {}, ['Hello World.']] }
 end
 
 def strategy
