@@ -1,6 +1,7 @@
 require 'helper'
 require 'mocha/setup'
 
+# Test class for omniauth-gplus
 class TestOmniAuthGPlus < MiniTest::Unit::TestCase
   def setup
     @request = mock('Request')
@@ -42,19 +43,19 @@ class TestOmniAuthGPlus < MiniTest::Unit::TestCase
     assert_equal(expected, actual)
   end
 
-  def test_state_state_is_included_in_request_params_when_present
+  def test_state_state_is_not_included_in_request_params_when_present
     expected = 'some_state'
-    @request.stubs(:params).returns({ 'state' => expected })
-    assert_equal expected, strategy.authorize_params[:state]
+    @request.stubs(:params).returns('state' => expected)
+    refute_equal expected, strategy.authorize_params[:state]
   end
 
-  def test_stores_state_in_the_session_when_present
+  def test_do_not_store_state_in_the_session_when_present
     expected = 'some_state'
-    @request.stubs(:params).returns({ 'state' => expected })
+    @request.stubs(:params).returns('state' => expected)
     refute_empty strategy.authorize_params['state']
-    assert_equal expected, strategy.authorize_params[:state]
+    refute_equal expected, strategy.authorize_params[:state]
     refute_empty strategy.session['omniauth.state']
-    assert_equal expected, strategy.session['omniauth.state']
+    refute_equal expected, strategy.session['omniauth.state']
   end
 
   def test_that_it_has_a_version_number

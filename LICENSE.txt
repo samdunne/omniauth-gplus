@@ -1,4 +1,4 @@
-Copyright (c) 2013 Kurtis Rainbolt-Greene
+Copyright (c) 2014 Sam Dunne
 
 MIT License
 

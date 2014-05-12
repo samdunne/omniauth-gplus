@@ -1,14 +1,41 @@
 omniauth-gplus
 =========
 
-  - [![Gem Version](https://badge.fury.io/rb/omniauth-gplus.png)](https://rubygems.org/gems/omniauth-gplus)
-  - [![Code Climate](https://codeclimate.com/github/krainboltgreene/omniauth-gplus.png)](https://codeclimate.com/github/krainboltgreene/omniauth-gplus)
-  - [![Build Status](https://travis-ci.org/krainboltgreene/omniauth-gplus.png)](https://travis-ci.org/krainboltgreene/omniauth-gplus)
-  - [![Dependency Status](https://gemnasium.com/krainboltgreene/omniauth-gplus.png)](https://gemnasium.com/krainboltgreene/omniauth-gplus)
-  - [![Coverage Status](https://coveralls.io/repos/krainboltgreene/omniauth-gplus/badge.png?branch=master)](https://coveralls.io/r/krainboltgreene/omniauth-gplus)
+[![Gem Version](http://img.shields.io/gem/v/omniauth-gplus.svg)][gem]
+[![Code Climate](http://img.shields.io/codeclimate/github/samdunne/omniauth-gplus.svg)][codeclimate]
+[![Build Status](http://img.shields.io/travis/samdunne/omniauth-gplus.svg)][travis]
+[![Dependency Status](http://img.shields.io/gemnasium/samdunne/omniauth-gplus.svg)][gemnasium]
+[![Coverage Status](http://img.shields.io/coveralls/samdunne/omniauth-gplus.svg)][coveralls]
+
+[gem]: https://rubygems.org/gems/omniauth-gplus
+[codeclimate]: https://codeclimate.com/github/samdunne/omniauth-gplus
+[travis]: https://travis-ci.org/samdunne/omniauth-gplus
+[gemnasium]: https://gemnasium.com/samdunne/omniauth-gplus
+[coveralls]: https://coveralls.io/r/samdunne/omniauth-gplus
 
 `omniauth-gplus` is a Google+ strategy for OmniAuth.
 It allows you to easily interact with the Google+ OAuth2 endpoint.
+
+
+Installing
+----------
+
+**Requirements**:
+  A GPlus API key/secret
+
+You can either install manually:
+
+``` bash
+$ gem install omniauth-gplus
+```
+
+Or put it in your `Gemfile`:
+
+``` ruby
+source 'https://rubygems.org'
+
+gem 'omniauth-gplus', '~> 2.0'
+```
 
 
 Examples
@@ -49,16 +76,21 @@ provider :gplus, ENV['GPLUS_KEY'], ENV['GPLUS_SECRET'], scope: 'plus.login', req
 
 To see and learn about all of the available App Activity types, visit: https://developers.google.com/+/api/moment-types/
 
+To get a refresh token please pass the following:
+
+```ruby
+provider :gplus, ENV['GPLUS_KEY'], ENV['GPLUS_SECRET'], scope: 'plus.login', request_visible_actions: 'AddActivity,BuyActivity', access_type: 'offline'
+```
 
 The information schema looks like this:
 
 ``` ruby
 info do
   {
-    'email' => 'kurtisrainboltgreene@gmail.com',
-    'name' => 'Kurtis Rainbolt-Greene',
-    'first_name' => 'Kurtis',
-    'last_name' => 'Rainbolt-Greene',
+    'email' => 'sam@sam-dunne.com',
+    'name' => 'Sam Dunne',
+    'first_name' => 'Sam',
+    'last_name' => 'Dunne',
     'image' => 'http://somelongurl.png',
     'urls' => {
       "Google+" => 'http://urltouserprofile.com'
@@ -76,84 +108,22 @@ extra do
 end
 ```
 
-
-Installing
-----------
-
-**Requirements**:
-
-  1. Ruby 1.9 OR Rubinius 1.9 OR JRuby 1.9
-  2. A GPlus API key/secret
-
-You can either install manually:
-
-``` bash
-$ gem install omniauth-gplus
-```
-
-Or put it in your `Gemfile`:
-
-``` ruby
-source 'https://rubygems.org'
-
-gem 'omniauth-gplus', '~> 1.0'
-```
-
-
-Issues & Documentation
-----------------------
-
-* [Documentation](https://github.com/krainboltgreene/omniauth-gplus/wiki)
-* [Issues](https://github.com/krainboltgreene/omniauth-gplus/issues)
-
-Absolutely feel free to contribute, please!
-
-
-Changelog
----------
-
-**v1.1.1**
-
-  * Using the correct api scope
-
-**v1.1.0**
-
-  * Fixed UID field always being nil
-
-**v1.0.0**
-
-  * Initial release
-
-
-Contributing
-------------
-
-* **Fork** the repository
-* **Clone the repository** locally, or **edit via Github**
-* Create a **new branch** using the [Git Flow Standard](http://yakiloo.com/getting-started-git-flow/) conventions
-* Commit **often** and **when important**
-* **DO NOT CHANGE** ANY OF THESE (without making a new branch for *that* change):
-  * `*.gemspec`
-  * `Rakefile`
-  * `.ruby-version`
-  * `.ruby-gemset`
-  * `.gitignore`
-  * Any part of the git history
-* **Write tests** specifically for the changes you've made, if no test exist
-* **Push** your feature or hotfix branch to Github.
-* Make a **Pull Request**
-
-
-Credits
--------
-
-  - [Sam Dunne](https://github.com/samdunne), for initial work and bug fixes
+Supported Rubies
+----------------
+Actively tested with the following Ruby versions:
+- MRI 2.1.0
+- MRI 2.0.0
+- MRI 1.9.3
+- MRI 1.9.2
+- JRuby HEAD
+- JRuby 1.9
+- Rubinius (latest stable)
 
 
 License
 -------
 
-Copyright (c) 2013 Kurtis Rainbolt-Greene
+Copyright (c) 2014 Sam Dunne
 
 MIT License
 
