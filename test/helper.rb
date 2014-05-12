@@ -3,7 +3,7 @@ Coveralls.wear!
 
 require 'omniauth-gplus'
 require 'minitest/autorun'
-require 'minitest/pride'
+# require 'minitest/pride'
 
 OmniAuth.config.test_mode = true
 
