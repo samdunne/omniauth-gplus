@@ -1,5 +1,5 @@
 AllCops:
-  Includes:
+  Include:
     - 'Gemfile'
     - 'Rakefile'
     - 'omniauth-gplus.gemspec'
@@ -57,10 +57,6 @@ DotPosition:
 # Don't require magic comment at the top of every file
 Encoding:
   Enabled: false
-
-# Enforce outdenting of access modifiers (i.e. public, private, protected)
-AccessModifierIndentation:
-  EnforcedStyle: outdent
 
 EmptyLinesAroundAccessModifier:
   Enabled: true

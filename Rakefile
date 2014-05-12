@@ -35,4 +35,4 @@ rescue LoadError
 end
 
 desc 'Default: run tests, and generate docs'
-task default: [:test, :yard, :rubocop]
+task :default => [:test, :yard, :rubocop]
