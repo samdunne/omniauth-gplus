@@ -115,7 +115,8 @@ Actively tested with the following Ruby versions:
 - MRI 2.0.0
 - MRI 1.9.3
 - MRI 1.9.2
-- JRuby 1.7.9
+- JRuby HEAD
+- JRuby 1.9
 - Rubinius (latest stable)
 
 
