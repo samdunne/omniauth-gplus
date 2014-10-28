@@ -19,6 +19,8 @@ module OmniAuth
 
       option :uid_field, :uid
 
+      option :openid_realm
+
       uid { raw_info['id'] }
 
       info do
@@ -48,6 +50,7 @@ module OmniAuth
           params['scope'] = format_scopes(params['scope'])
           params['request_visible_actions'] = format_actions(params['request_visible_actions']) if params['request_visible_actions']
           custom_parameters(params)
+          add_openid_realm_if_present(params)
         end
       end
 
@@ -75,6 +78,11 @@ module OmniAuth
 
       def add_key_to_params(params, key)
         params[key] = request.params[key] if request.params[key]
+      end
+
+      def add_openid_realm_if_present(params)
+        realm = options.send(:openid_realm)
+        params['openid.realm'] = realm if realm.present?
       end
 
       def raw_info
