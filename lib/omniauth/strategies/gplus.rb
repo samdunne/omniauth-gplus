@@ -45,7 +45,7 @@ module OmniAuth
         }
       end
 
-      # move it here...
+      # this overwrite was removed from Omniauth::Strategies::OAuth2
       def callback_url
         full_host + script_name + callback_path
       end
