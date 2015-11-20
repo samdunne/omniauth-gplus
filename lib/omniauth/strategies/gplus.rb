@@ -54,6 +54,10 @@ module OmniAuth
         end
       end
 
+      def callback_url
+        full_host + script_name + callback_path
+      end
+
       private
 
       def format_actions(actions)
@@ -82,7 +86,7 @@ module OmniAuth
 
       def add_openid_realm_if_present(params)
         realm = options.send(:openid_realm)
-        params['openid.realm'] = realm if realm.present?
+        params['openid.realm'] = realm if realm
       end
 
       def raw_info
