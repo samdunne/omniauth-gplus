@@ -27,10 +27,10 @@ end
 
 begin
   require 'rubocop/rake_task'
-  Rubocop::RakeTask.new
+  RuboCop::RakeTask.new
 rescue LoadError
   task :rubocop do
-    $stderr.puts 'Rubocop is disabled'
+    $stderr.puts 'RuboCop is disabled'
   end
 end
 

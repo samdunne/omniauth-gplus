@@ -65,6 +65,9 @@ EmptyLinesAroundAccessModifier:
 EndAlignment:
   AlignWith: variable
 
+Metrics/AbcSize:
+  Max: 20
+
 # Indentation of when/else
 CaseIndentation:
   IndentWhenRelativeTo: end

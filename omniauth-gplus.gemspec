@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry'
   s.add_development_dependency 'coveralls'
   s.add_development_dependency 'rubocop'
+  s.add_development_dependency 'minitest'
 
   if RUBY_PLATFORM == 'rbx'
     s.add_development_dependency 'racc'
