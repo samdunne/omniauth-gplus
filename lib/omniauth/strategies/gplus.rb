@@ -45,6 +45,11 @@ module OmniAuth
         }
       end
 
+      # this overwrite was removed from Omniauth::Strategies::OAuth2
+      def callback_url
+        full_host + script_name + callback_path
+      end
+
       def authorize_params
         super.tap do |params|
           params['scope'] = format_scopes(params['scope'])
