@@ -74,7 +74,7 @@ If you use the `plus.login` scope you can request `visibleactions` in order to a
 provider :gplus, ENV['GPLUS_KEY'], ENV['GPLUS_SECRET'], scope: 'plus.login', request_visible_actions: 'AddActivity,BuyActivity'
 ```
 
-To see and learn about all of the available App Activity types, visit: https://developers.google.com/+/api/moment-types/
+To see and learn about all of the available App Activity types, visit: https://developers.google.com/+/web/api/rest/latest/activities
 
 To get a refresh token please pass the following:
 
