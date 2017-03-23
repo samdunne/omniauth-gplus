@@ -29,7 +29,7 @@ module OmniAuth
           'name' => raw_info['name'],
           'first_name' => raw_info['given_name'],
           'last_name' => raw_info['family_name'],
-          'image' => raw_info['picture'],
+          'image' => { 'url' => raw_info['picture'], 'is_default' => is_default },
           'urls' => {
             'Google+' => raw_info['link']
           }
@@ -92,6 +92,13 @@ module OmniAuth
       def raw_info
         access_token.options[:mode] = :query
         @raw_info ||= access_token.get('userinfo').parsed
+      end
+
+      def is_default
+        return @is_default if defined?(@is_default)
+
+        url = File.join('https://www.googleapis.com/plus/v1/people', raw_info['id'])
+        @is_default = access_token.get(url).parsed['image']['isDefault']
       end
     end
   end
