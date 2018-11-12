@@ -8,8 +8,8 @@ module OmniAuth
 
       option :client_options,
              :site => 'https://www.googleapis.com/oauth2/v1',
-             :authorize_url => 'https://www.google.com/accounts/o8/oauth2/authorization',
-             :token_url => 'https://www.google.com/accounts/o8/oauth2/token'
+             :authorize_url => 'https://accounts.google.com/o/oauth2/auth',
+             :token_url => 'https://www.googleapis.com/oauth2/v4/token'
 
       option :authorize_options, [:scope, :request_visible_actions]
 
